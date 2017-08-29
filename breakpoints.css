@@ -1,25 +1,47 @@
+html {
+  --screen-size: "NA";
+}
+
+/* reporter */
+html.report:before {
+  content: var(--screen-size);
+}
+
+/* style of the reporter */
+html.report:before {
+  display: block; opacity: 0.3;
+  position: fixed;
+  top: 10px; right: 10px; z-index: 1000;
+  background-color: #000; color: #fff;
+  border-radius: 4px; border: 1px solid white;
+  padding: 2px 4px;
+  font-family: monospace;
+}
+
 @media screen and (min-width: 1025px) {
-  .largeScreens {
-    --screen-size: 'Above 1025px';
+  html, .largeScreens {
+    --screen-size: '1024px < D';
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .mediumScreens {
-    --screen-size: 'Upto 1024px';
+  html, .mediumScreens {
+    --screen-size: '768px < C <= 1024px';
   }
 }
 
 @media screen and (max-width: 768px) {
+  html,
   .iPad,
   .smallScreens {
-    --screen-size: 'Upto 768px';
+    --screen-size: '320px < B <= 768px';
   }
 }
 
 @media screen and (max-width: 320px) {
+  html,
   .iPhone,
   .xsmallScreens {
-    --screen-size: 'Upto 320px';
+    --screen-size: '0 < A <= 320px';
   }
 }
