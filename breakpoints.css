@@ -1,0 +1,25 @@
+@media screen and (min-width: 1025px) {
+  .largeScreens {
+    --screen-size: 'Above 1025px';
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mediumScreens {
+    --screen-size: 'Upto 1024px';
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .iPad,
+  .smallScreens {
+    --screen-size: 'Upto 768px';
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .iPhone,
+  .xsmallScreens {
+    --screen-size: 'Upto 320px';
+  }
+}
