@@ -1,0 +1,5 @@
+@media screen and (min-width: 769px) {
+  html, .mediumScreens {
+    --screen-size: 'For 769px to 1024px'
+  }
+}

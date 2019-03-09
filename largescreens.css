@@ -1,0 +1,5 @@
+@media screen and (min-width: 1025px) {
+  html, .largeScreens {
+    --screen-size: 'For 1025px and above';
+  }
+}

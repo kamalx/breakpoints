@@ -1,0 +1,9 @@
+@media screen and (min-width: 280px) {
+  html, .iPhone, .xsmallScreens {
+    --screen-size: 'For 280px to 320px (for iPhones and smaller)'
+  }
+
+  html {
+    font-size: 16px;
+  }
+}
