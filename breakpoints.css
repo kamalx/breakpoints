@@ -1,3 +1,5 @@
+/* basic breakpoints for any mobile-first site scaffold */
+
 html {
   --screen-size: "NA";
 }
@@ -18,30 +20,30 @@ html.report:before {
   font-family: monospace;
 }
 
+/* Each of the following breakpoints have a corresponding css file in the
+ * project which should be included in the same order as below into the html
+ * pages during dev, and combined+minified in final deployment */
+
+@media screen and (min-width: 280px) {
+  html, .iPhone, .xsmallScreens {
+    --screen-size: 'For 280px to 320px (for iPhones and smaller)'
+  }
+}
+
+@media screen and (min-width: 321px) {
+  html, .iPad, .smallScreens {
+    --screen-size: 'For 321px to 768px (iPads)'
+  }
+}
+
+@media screen and (min-width: 769px) {
+  html, .mediumScreens {
+    --screen-size: 'For 769px to 1024px'
+  }
+}
+
 @media screen and (min-width: 1025px) {
   html, .largeScreens {
-    --screen-size: '1024px < D';
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  html, .mediumScreens {
-    --screen-size: '768px < C <= 1024px';
-  }
-}
-
-@media screen and (max-width: 768px) {
-  html,
-  .iPad,
-  .smallScreens {
-    --screen-size: '320px < B <= 768px';
-  }
-}
-
-@media screen and (max-width: 320px) {
-  html,
-  .iPhone,
-  .xsmallScreens {
-    --screen-size: '0 < A <= 320px';
+    --screen-size: 'For 1025px and above';
   }
 }
