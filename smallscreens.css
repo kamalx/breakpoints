@@ -1,5 +1,5 @@
 @media screen and (min-width: 321px) {
   html, .iPad, .smallScreens {
-    --screen-size: 'For 321px to 768px (iPads)'
+    --screen-size: '321px+ (for large phones & tablets)'
   }
 }

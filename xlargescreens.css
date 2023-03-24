@@ -1,0 +1,5 @@
+@media screen and (min-width: 1366px) {
+  html, .xlargeScreens {
+    --screen-size: '1366px+';
+  }
+}
