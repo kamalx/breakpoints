@@ -2,15 +2,16 @@
 
 html {
   --screen-size: "NA";
+  --notification: "This page is currently using breakpoints.css for development convenience. You can remove class '__report' from your html element to turn off these messages."
 }
 
 /* reporter */
-html.report:before {
+html.__report:before {
   content: var(--screen-size);
 }
 
 /* style of the reporter */
-html.report:before {
+html.__report:before {
   display: block; opacity: 0.3;
   position: fixed;
   top: 10px; right: 10px; z-index: 1000;
@@ -20,30 +21,64 @@ html.report:before {
   font-family: monospace;
 }
 
+html.__report.bottom:before {
+  top: unset;
+  bottom: 10px; right: 10px; z-index: 1000;
+}
+
+html.__report::after {
+  display: block; opacity: 0.8;
+  position: relative;
+  top: 10px; left: 10px; z-index: 1002;
+  background-color: #000; color: #ccc;
+  border-radius: 4px; border: 1px solid white;
+  padding: 2px 4px; margin-bottom: 20px;
+  font-family: monospace;
+  content: var(--notification);
+}
+
 /* Each of the following breakpoints have a corresponding css file in the
  * project which should be included in the same order as below into the html
  * pages during dev, and combined+minified in final deployment */
 
 @media screen and (min-width: 280px) {
   html, .iPhone, .xsmallScreens {
-    --screen-size: 'For 280px to 320px (for iPhones and smaller)'
+    --screen-size: '280px to 320px (small screen devices)'
   }
 }
 
 @media screen and (min-width: 321px) {
   html, .iPad, .smallScreens {
-    --screen-size: 'For 321px to 768px (iPads)'
+    --screen-size: '321px to 768px (larger screen mobiles and tablets)'
   }
 }
 
 @media screen and (min-width: 769px) {
   html, .mediumScreens {
-    --screen-size: 'For 769px to 1024px'
+    --screen-size: '769px to 1024px (smaller desktop screens and large tablets)'
   }
 }
 
 @media screen and (min-width: 1025px) {
   html, .largeScreens {
-    --screen-size: 'For 1025px and above';
+    --screen-size: '1025px to 1365px';
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  html, .xlargeScreens {
+    --screen-size: '1366px to 1680px';
+  }
+}
+
+@media screen and (min-width: 1681px) {
+  html, .xxlargeScreens {
+    --screen-size: '1681px to 1920px (HD)';
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  html, .giganticScreens {
+    --screen-size: 'Gigantic. > 1920px'
   }
 }
